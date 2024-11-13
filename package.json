@@ -2,22 +2,46 @@
   "name": "ing-hrm-wiki",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsoa spec-and-routes && tsc",
+    "dev": "concurrently \"nodemon -x tsoa spec-and-routes\"",
+    "start": "npx nodemon",
+    "build:continue": "npx tsc",
+    "spec": "tsoa spec",
+    "swagger-gen": "tsoa swagger",
+    "routes": "tsoa routes",
+    "tsc": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"**/*.ts\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
+    "eslint": "^8.57.0",
     "express": "^4.21.1",
-    "swagger-ui-express": "^5.0.1",
-    "tsoa": "^6.5.1"
+    "helmet": "^8.0.0",
+    "mongoose": "^8.8.1",
+    "pino": "^9.5.0",
+    "pino-http": "^10.3.0",
+    "pino-pretty": "^13.0.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "@types/swagger-ui-express": "^4.1.7",
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "tsoa": "^6.5.1",
     "typescript": "^5.6.3"
   }
 }
